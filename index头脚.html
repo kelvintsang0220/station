@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="commonCSS/bootstrap.min.css">
+    <link rel="stylesheet" href="commonCSS/font-awesome.min.css">
+    <link rel="stylesheet" href="index1.css">
+    <script type="text/javascript" src="commonJS/jquery.min.js"></script>
+    <script type="text/javascript" src="commonCSS/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<!--顶部logo-->
+<div class="mainContainer vertical_center" id="logo">
+    <img src="images/top-banner.png" alt="top-banner">
+</div>
+<!--顶部logo-->
+
+<!--导航条、搜索框、无障碍阅读-->
+<div id="nav_search_read" class="mainContainer vertical_center">
+
+    <!--导航条-->
+    <nav id="nav">
+
+        <ul>
+            <li><a href="#">首页</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: 0px; top: 50px; display: block">
+                    <li><a href="#">公安新闻</a></li>
+                    <li><a href="#">本地新闻</a></li>
+                    <li><a href="#">省内新闻</a></li>
+                    <li><a href="#">国内新闻</a></li>
+                    <li><a href="#">茂名警讯</a></li>
+                    <li><a href="#">警方提示</a></li>
+                    <li><a href="#">在线咨询</a></li>
+                    <li><a href="#">网上举报</a></li>
+                </ul>
+            </li>
+            <li><a href="#">警务资讯</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -150px; top: 50px">
+                    <li><a href="#">公安新闻</a></li>
+                    <li><a href="#">本地新闻</a></li>
+                    <li><a href="#">省内新闻</a></li>
+                    <li><a href="#">国内新闻</a></li>
+                    <li><a href="#">茂名警讯</a></li>
+                    <li><a href="#">警方提示</a></li>
+                </ul>
+            </li>
+            <li><a href="#">信息公开</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -300px;top: 50px">
+                    <li><a href="#">信息公开</a></li>
+                    <li><a href="#">警方通缉</a></li>
+                    <li><a href="#">警情通报</a></li>
+                    <li><a href="#">公告公示</a></li>
+                </ul>
+            </li>
+            <li><a href="#">网上办事</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -450px;top: 50px">
+                    <li><a href="#">办事指南</a></li>
+                    <li><a href="#">表格下载</a></li>
+                    <li><a href="#">场景服务</a></li>
+                </ul>
+            </li>
+            <li><a href="#">警民互动</a>
+                <span class="triangle_up" ></span>
+                <ul style="position: absolute; left: -600px;top: 50px ">
+                    <li><a href="#">预留</a></li>
+                    <li><a href="#">预留</a></li>
+                    <li><a href="#">预留</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </nav>
+    <div id="bmbb">
+        <h5><span class="fa fa-volume-up"></span>便民播报：</h5>
+        <ul>
+            <li><a href="#">茂名警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">名警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">APP 民警办案增添“神器”</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function scroll(){
+            $("#bmbb ul").animate({"margin-left":"300px"},function(){
+                $("#bmbb ul li:eq(0)").appendTo($("#bmbb ul"))
+                $("#bmbb ul").css({"margin-left":0})
+            })
+        }
+        setInterval(scroll,5000)
+    </script>
+
+
+
+    <div class="second_list_bg"></div>
+
+
+
+    <!--搜索框-->
+    <form id="search" action="" method="">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="请输入关键内容...">
+            <span class="input-group-btn">
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+                            data-toggle="dropdown">
+                        标题
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" id="searchTitle">
+                            <a role="menuitem" tabindex="-1" href="#">标题</a>
+                        </li>
+                        <li role="presentation" id="searchContent">
+                            <a role="menuitem" tabindex="-1" href="#">正文</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+        </div><!-- /input-group -->
+    </form>
+
+
+    <!--搜索框内选择标题和正文-->
+    <script>
+        $(function () {
+            $("#searchTitle").click(function () {
+                var title = $("#searchTitle").text();
+                $(".dropdown button").text(title).append("<span class='caret'></span>");
+            });
+            $("#searchContent").click(function () {
+                var content = $("#searchContent").text();
+                $(".dropdown button").text(content).append("<span class='caret'></span>");
+            });
+        })
+    </script>
+
+
+    <!--无障碍阅读-->
+    <div id="read">
+        <a href="#">无障碍阅读</a>
+    </div>
+
+</div>
+<!--导航条、搜索框、无障碍阅读-->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--页脚-->
+<footer id="footer" class="mainContainer vertical_center">
+    <nav>
+        <ul>
+            <li><a href="">网站地图</a></li>
+            <li><a href="">隐私安全</a></li>
+            <li><a href="">版权声明</a></li>
+            <li><a href="">联系方式</a></li>
+            <li><a href="">法律责任</a></li>
+        </ul>
+    </nav>
+    <article>
+        <section>
+            <p>网站维护：茂名市公安局宣传科</p>
+            <p>不得转载及建立镜像，否则追究法律责任  地址：茂名市油城九路</p>
+            <p>版权所有：茂名市公安局© 2015-2017 粤ICP备08021365号（最佳分辨率：1920*1080）</p>
+            <div id="footer_logo">
+                <img src="images/footer-logo.png" alt="党政机关">
+            </div>
+        </section>
+    </article>
+</footer>
+<!--页脚-->
+
+</body>
+</html>

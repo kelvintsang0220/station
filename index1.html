@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="commonCSS/bootstrap.min.css">
+    <link rel="stylesheet" href="commonCSS/font-awesome.min.css">
+    <link rel="stylesheet" href="commonCSS/jquery.bxslider.css">
+    <link rel="stylesheet" href="index1.css">
+    <script type="text/javascript" src="commonJS/jquery.min.js"></script>
+    <script type="text/javascript" src="commonCSS/bootstrap.min.js"></script>
+    <script type="text/javascript" src="commonJS/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="index1.js"></script>
+
+    <script type="text/javascript" src="commonJS/fsrPMD.js"></script>
+</head>
+<body>
+
+
+<!--顶部logo-->
+<div class="mainContainer vertical_center" id="logo">
+    <img src="images/首页.png" alt="top-banner">
+</div>
+<!--顶部logo-->
+
+<!--导航条、搜索框、无障碍阅读-->
+<div id="nav_search_read" class="mainContainer vertical_center">
+
+    <!--导航条-->
+    <nav id="nav">
+
+        <ul>
+            <li><a href="#">首页</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: 0px; top: 50px; display: block">
+                    <li><a href="#">公安新闻</a></li>
+                    <li><a href="#">本地新闻</a></li>
+                    <li><a href="#">省内新闻</a></li>
+                    <li><a href="#">国内新闻</a></li>
+                    <li><a href="#">茂名警讯</a></li>
+                    <li><a href="#">警方提示</a></li>
+                    <li><a href="#">在线咨询</a></li>
+                    <li><a href="#">网上举报</a></li>
+                </ul>
+            </li>
+            <li><a href="index2.html">警务资讯</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -150px; top: 50px">
+                    <li><a href="#">公安新闻</a></li>
+                    <li><a href="#">本地新闻</a></li>
+                    <li><a href="#">省内新闻</a></li>
+                    <li><a href="#">国内新闻</a></li>
+                    <li><a href="#">茂名警讯</a></li>
+                    <li><a href="#">警方提示</a></li>
+                </ul>
+            </li>
+            <li><a href="#">信息公开</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -300px;top: 50px">
+                    <li><a href="#">信息公开</a></li>
+                    <li><a href="#">警方通缉</a></li>
+                    <li><a href="#">警情通报</a></li>
+                    <li><a href="#">公告公示</a></li>
+                </ul>
+            </li>
+            <li><a href="#">网上办事</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -450px;top: 50px">
+                    <li><a href="#">办事指南</a></li>
+                    <li><a href="#">表格下载</a></li>
+                    <li><a href="#">场景服务</a></li>
+                </ul>
+            </li>
+            <li><a href="#">警民互动</a>
+                <span class="triangle_up"></span>
+                <ul style="position: absolute; left: -600px;top: 50px ">
+                    <li><a href="#">预留</a></li>
+                    <li><a href="#">预留</a></li>
+                    <li><a href="#">预留</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </nav>
+    <div id="bmbb">
+        <h5><span class="fa fa-volume-up"></span>便民播报：</h5>
+        <ul>
+            <li><a href="#">茂名警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">名警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">警务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">务APP 民警办案增添“神器”</a></li>
+            <li><a href="#">APP 民警办案增添“神器”</a></li>
+        </ul>
+
+        <script>
+            function scroll() {
+                $("#bmbb ul").animate({"margin-left": "300px"}, function () {
+                    $("#bmbb ul li:eq(0)").appendTo($("#bmbb ul"))
+                    $("#bmbb ul").css({"margin-left": 0})
+                })
+            }
+            setInterval(scroll, 5000)
+        </script>
+    </div>
+
+
+    <div class="second_list_bg"></div>
+
+
+    <!--搜索框-->
+    <form id="search" action="" method="">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="请输入关键内容...">
+            <span class="input-group-btn">
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
+                            data-toggle="dropdown">
+                        标题
+                        <span class="caret"></span>
+                    </button>
+                    <ul style="z-index: 9999" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" id="searchTitle">
+                            <a role="menuitem" tabindex="-1" href="#">标题</a>
+                        </li>
+                        <li role="presentation" id="searchContent">
+                            <a role="menuitem" tabindex="-1" href="#">正文</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+        </div><!-- /input-group -->
+    </form>
+
+
+    <!--搜索框内选择标题和正文-->
+    <script>
+        $(function () {
+            $("#searchTitle").click(function () {
+                var title = $("#searchTitle").text();
+                $(".dropdown button").text(title).append("<span class='caret'></span>");
+            });
+            $("#searchContent").click(function () {
+                var content = $("#searchContent").text();
+                $(".dropdown button").text(content).append("<span class='caret'></span>");
+            });
+        })
+    </script>
+
+
+    <!--无障碍阅读-->
+    <div id="read">
+        <a href="#">无障碍阅读</a>
+    </div>
+
+</div>
+<!--导航条、搜索框、无障碍阅读-->
+
+<!--头部，包含轮播图、新闻、局长信箱、热线、警员风采 start-->
+<header class="mainContainer">
+    <!--轮播图-->
+    <div id="lunbotu">
+
+        <div id="wrapper"><!-- 最外层部分 -->
+            <div id="banner"><!-- 轮播部分 -->
+                <ul class="imgList"><!-- 图片部分 -->
+                    <li><a href="#"><img src="images/1.jpg" width="530px" height="320px" alt="puss in boots1"></a></li>
+                    <li><a href="#"><img src="images/2.jpg" width="530px" height="320px" alt="puss in boots2"></a></li>
+                    <li><a href="#"><img src="images/3.jpg" width="530px" height="320px" alt="puss in boots3"></a></li>
+                    <li><a href="#"><img src="images/4.jpg" width="530px" height="320px" alt="puss in boots4"></a></li>
+                    <li><a href="#"><img src="images/5.jpg" width="530px" height="320px" alt="puss in boots5"></a></li>
+                </ul>
+                <span class="glyphicon glyphicon-chevron-left" id="prev" style="font-size: 26px"></span>
+                <span class="glyphicon glyphicon-chevron-right" id="next" style="font-size: 26px"></span>
+                <div class="bg"></div> <!-- 图片底部背景层部分-->
+                <ul class="infoList"><!-- 图片左下角文字信息部分 -->
+                    <li class="infoOn">puss in boots1</li>
+                    <li>puss in boots2</li>
+                    <li>puss in boots3</li>
+                    <li>puss in boots4</li>
+                    <li>puss in boots5</li>
+                </ul>
+                <ul class="indexList"><!-- 图片右下角序号部分 -->
+                    <li class="indexOn">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!--新闻、热线电话-->
+    <div id="header_news_contact">
+
+        <ul id="news_title">   <!--新闻标题-->
+            <li>公安新闻</li>
+            <li>本地新闻</li>
+            <li>省内新闻</li>
+            <li>国际新闻</li>
+        </ul>
+
+        <ul id="myTabContent">
+            <li id="gaxw">
+                <div class="news_content_head">
+                    <h4><a href="">去年干了什么，今年怎么干1</a></h4>
+                    <p><a href="">2月17日下午，随着庄严国歌的奏响，全市公安工作电视电话会议在茂名市民活动中心会议大厅召开。会议主要是总结2016年全市公安工作、现金集体和个人1...</a></p>
+                </div>
+                <div class="news_content_list">
+                    <ul>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>1-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>1-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>1-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>1-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>1-1</span></a></li>
+                    </ul>
+                </div>
+                <div class="news_content_readmore">
+                    <a href="#">查看更多
+                        <hr/>
+                    </a>
+                </div>
+            </li>
+            <li id="bdxw">
+                <div class="news_content_head">
+                    <h4><a href="">去年干了什么，今年怎么干2</a></h4>
+                    <p><a href="">2月17日下午，随着庄严国歌的奏响，全市公安工作电视电话会议在茂名市民活动中心会议大厅召开。会议主要是总结2016年全市公安工作、现金集体和个人...2</a></p>
+                </div>
+                <div class="news_content_list">
+                    <ul>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>2-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>2-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>2-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>2-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>2-1</span></a></li>
+                    </ul>
+                </div>
+                <div class="news_content_readmore">
+                    <a href="#">查看更多
+                        <hr/>
+                    </a>
+                </div>
+            </li>
+            <li id="snxw">
+                <div class="news_content_head">
+                    <h4><a href="">去年干了什么，今年怎么干3</a></h4>
+                    <p><a href="">2月17日下午，随着庄严国歌的奏响，全市公安工作电视电话会议在茂名市民活动中心会议大厅召开。会议主要是总结2016年全市公安工作、现金集体和个人3...</a></p>
+                </div>
+                <div class="news_content_list">
+                    <ul>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>3-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>3-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>3-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>3-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>3-1</span></a></li>
+                    </ul>
+                </div>
+                <div class="news_content_readmore">
+                    <a href="#">查看更多
+                        <hr/>
+                    </a>
+                </div>
+            </li>
+            <li id="gnxw">
+                <div class="news_content_head">
+                    <h4><a href="">去年干了什么，今年怎么干4</a></h4>
+                    <p><a href="">2月17日下午，随着庄严国歌的奏响，全市公安工作电视电话会议在茂名市民活动中心会议大厅召开。会议主要是总结2016年全市公安工作、现金集体和个人4...</a></p>
+                </div>
+                <div class="news_content_list">
+                    <ul>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>4-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>4-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>4-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>4-1</span></a></li>
+                        <li><a href="">向雷锋学习茂名市公安局开展志愿者嘉年华活动<span>4-1</span></a></li>
+                    </ul>
+                </div>
+                <div class="news_content_readmore">
+                    <a href="#">查看更多
+                        <hr/>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+
+        <div id="contact">
+            <a href="" class="_mail">
+                <span class="fa fa-envelope-o"></span>
+                局长信箱
+            </a>
+            <a href="" class="_phone">
+                <span class="fa fa-phone"></span> 反信息诈骗反伪卡犯罪热线：0668-3345678
+            </a>
+        </div>
+    </div>
+
+
+    <!--警员风采-->
+    <div id="police_style" class="vertical_center">
+        <div class="jyfc_title">
+            警员风采
+        </div>
+        <div class="jyfc_content" id="jyfc_content">
+
+            <ul>
+                <li><a href=""><img src="images/fengcai1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai2.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai3.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai4.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai5.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai6.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai7.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai8.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai9.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/fengcai10.jpg" alt=""></a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</header>
+<!--头部，包含轮播图、新闻、局长信箱、热线、警员风采 end---->
+
+
+<!--信息公开、专题报道、新浪&腾讯微博、网上追逃举报电话 start-->
+<div class="mainContainer vertical_center">
+    <article id="xxgk">  <!--信息公开部分-->
+        <div class="xxgk_title">    <!--信息公开title-->
+            <h3>信息公开</h3>
+            <a href="#">更多>></a>
+        </div>
+        <div class="xxgk_gglb">
+            <ul>
+                <li><a href="#"><span class="iconfont">&#xe613;</span> 公开目录 <span class="iconfont right">&#xe604;</span>
+                </a></li>
+                <li><a href="#"><span class="iconfont">&#xe61d;</span> 公开指南<span class="iconfont right">&#xe604;</span></a>
+                </li>
+                <li><a href="#"><span class="iconfont">&#xe69f;</span> 办事指南<span class="iconfont right">&#xe604;</span></a>
+                </li>
+                <li><a href="#"><span class="iconfont">&#xe63a;</span> 年度报告<span class="iconfont right">&#xe604;</span></a>
+                </li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span> 工作总结<span class="iconfont right">&#xe604;</span></a>
+                </li>
+            </ul> <!--公开列表-->
+        </div>
+        <div id="xxgk_xxlb">
+            <ul class="xxgk_tab_title"><!--信息title-->
+                <li>警方公告</li>
+                <li>警方视讯</li>
+                <li>政声传递</li>
+                <li>警队建设</li>
+            </ul>
+            <ul class="xxgk_tab_list"><!--信息列表-->
+                <li>
+                    <ul>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员1 <span>2017-04-02</span> </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员2 <span>2017-04-02</span> </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员3 <span>2017-04-02</span> </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                        <li><a href="#">茂名市公安局招聘出入境警务辅助人员4 <span>2017-04-02</span> </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="xxgk_zfxx">    <!--意见箱-->
+            <ul>
+                <li><a href="#"><span class="iconfont float_left">&#xe60d;</span>&nbsp;&nbsp;政府信息公开意见箱<span
+                        class="iconfont float_right">&#xe608;</span></a></li>
+                <li><a href=""><span class="iconfont float_left">&#xe7ef;</span>&nbsp;&nbsp;我要申请政府信息公开<span
+                        class="iconfont float_right">&#xe608;</span></a></li>
+                <li><a href=""><span class="iconfont float_left">&#xe611;</span>&nbsp;&nbsp;我要查询申请受理进度<span
+                        class="iconfont float_right">&#xe608;</span></a></li>
+            </ul>
+        </div>
+        <div id="jftj"><!--警方通缉-->
+            <div class="jftj_title">
+                <br>警<br>方<br>通<br>缉
+            </div>
+            <div id="jftj_pic">
+                <ul>
+                    <li><a href="#"><img src="images/jftj1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj3.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj4.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj5.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj6.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj7.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj8.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj9.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/jftj10.jpg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="pabhd">
+            <a href=""><img src="images/pabhd.png" alt=""></a>
+        </div>
+
+
+    </article>
+
+    <aside id="ztbd_wxwb"><!--专题报道-->
+        <div class="ztbd">
+            <a href="">专题报道</a>
+            <ul>
+                <li><a href="#">信用信息双公开</a></li>
+                <li><a href="#">科技强警建设</a></li>
+                <li><a href="#">功模民警风采</a></li>
+                <li><a href="#">行政复议决定网上公开</a></li>
+            </ul>
+        </div>
+        <div class="wxwb">
+            <div class="erweima"></div>
+            <a href=""><span class="iconfont">&#xe614;</span> 茂名公安新浪微博</a>
+            <a href=""><span class="iconfont">&#xe612;</span> 茂名公安腾讯微博</a>
+        </div>
+        <div id="jbdh">
+            <div class="jbdh">
+                <h4>网上追逃举报电话</h4>
+                <h4><span class="iconfont">&#xe621;</span>&nbsp;0668-2912449</h4>
+            </div>
+        </div>
+    </aside>
+
+
+</div>
+<!--信息公开、专题报道、新浪&腾讯微博、网上追逃举报电话 end---->
+
+
+<!--网上办事、查询、网上办事大厅 start---->
+<div class="mainContainer vertical_center" id="wsbshz">
+    <article id="wsbscx">  <!--网上办事部分-->
+        <div class="xxgk_title">    <!--网上办事title-->
+            <h3>网上办事</h3>
+            <a href="#">更多>></a>
+        </div>
+        <div class="wsjws">  <!--网上警务室-->
+            <ul>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe623;</span><h4>出入境</h4></a></li>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe65a;</span><h4>户政</h4></a></li>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe7e3;</span><h4>交警</h4></a></li>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe615;</span><h4>网警</h4></a></li>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe643;</span><h4>消防</h4></a></li>
+                <li><a href="#"><span class="iconfont iconfont-size">&#xe645;</span><h4>边防</h4></a></li>
+            </ul>
+            <a href="">茂名市公安局派出所网上警务室</a>
+        </div>
+        <div class="kscxtd">
+            <div class="kscxtd_title"> <!--快速查询通道-->
+                <h5>快速查询通道</h5>
+            </div>
+            <div class="ksxctd_cx">
+                <ul>
+                    <li>
+                        <form action="" method="post">
+                            <label>出入境业务办理进度查询</label>
+                            <input type="text">
+                            <a href="" class="cx">立即查询</a>
+                            <a class="rewrite" id="cx1">重填</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="" method="post">
+                            <label>出入境业务办理进度查询</label>
+                            <input type="text">
+                            <a href="" class="cx">立即查询</a>
+                            <a class="rewrite">重填</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="" method="post">
+                            <label>出入境业务办理进度查询</label>
+                            <input type="text">
+                            <a href="" class="cx">立即查询</a>
+                            <a class="rewrite">重填</a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="" method="post">
+                            <label>出入境业务办理进度查询</label>
+                            <input type="text">
+                            <a href="" class="cx">立即查询</a>
+                            <a class="rewrite">重填</a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wsqdh_gat">  <!--政务群导航和广东省公安厅button-->
+            <a href="#" class="zfqdh">广东省公安政务网站群导航</a>
+            <a href="#" class="gat">广东省公安厅</a>
+        </div>
+    </article>
+    <div class="wsbsdt">
+        <aside id="wsbsdt"><!--网上办事大厅-->
+            <a href="#" class="mmft"><img src="images/wsbsdt_title.jpg" alt=""></a>
+            <ul>
+                <li><a href=""><span class="iconfont">&#xe602;</span>政务公开</a></li>
+                <li><a href=""><span class="iconfont">&#xe602;</span>法人事项</a></li>
+                <li><a href=""><span class="iconfont">&#xe602;</span>个人事项</a></li>
+                <li><a href=""><span class="iconfont">&#xe602;</span>政民互动</a></li>
+                <li><a href=""><span class="iconfont">&#xe602;</span>效能监督</a></li>
+            </ul>
+            <a href="#" class="bgxz">表格下载</a>
+        </aside>
+    </div>
+
+</div>
+<!--网上办事、查询、网上办事大厅 end------>
+
+
+<!--警民互动、在线投票、警企邮箱 start-->
+<div class="mainContainer vertical_center">
+    <div class="jmhd">
+        <div class="xxgk_title">    <!--警民互动title-->
+            <h3>警民互动</h3>
+            <a href="#">更多>></a>
+        </div>
+        <div class="zxft"> <!--在线访谈-->
+            <div class="zxft_title">
+                在线访谈
+            </div>
+            <div class="zxft_content">
+                <a href="#"><img src="images/5.jpg" alt=""></a>
+                <p>嘉宾：专访省公安厅张东鸣副厅长</p>
+                <p>时间：2016-10-21 10:00-11:00</p>
+                <p>摘要：2016年10月21日（星期五）10时...</p>
+                <a href="">立即进入访谈</a>
+            </div>
+        </div>
+        <div class="hdlb">
+            <ul class="hdlb_title">
+                <li>警方提示</li>
+                <li>线索举报</li>
+                <li>网上信访</li>
+                <li>网上咨询</li>
+                <li>网上投诉</li>
+            </ul>
+            <ul class="hdlb_list_hz">
+                <li>
+                    <ul class="hdlb_list">
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示<span>2017-04-04</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="hdlb_list">
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示2<span>2017-04-04</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="hdlb_list">
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示3<span>2017-04-04</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="hdlb_list">
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示4<span>2017-04-04</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="hdlb_list">
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                        <li><a href="#">银行卡防盗刷警方提示5<span>2017-04-04</span></a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <div class="ckgd"><a href="">查看更多--></a></div>
+        </div>
+    </div>
+    <div class="wstp">
+        <h4 class="wstp_title">网上投票</h4>
+        <div class="wstp_tp">
+            <h4 class="wstp_title1">改善建议</h4>
+            <form action="">
+                <input type="checkbox"><label>栏目设置不够合理</label><br>
+                <input type="checkbox"><label>内容更新不及时</label><br>
+                <input type="checkbox"><label>在线服务未够完善</label><br>
+                <input type="checkbox"><label>其他意见</label><br>
+                <button type="submit">提交投票</button>
+                <a href="#">查看结果</a>
+            </form>
+        </div>
+        <div class="jqyx">
+            <a href="">警企邮箱</a>
+        </div>
+    </div>
+
+</div>
+<!--警民互动、在线投票、警企邮箱 end---->
+
+<!--友情链接 start-->
+<div id="yclj" class="mainContainer vertical_center">
+
+    <div class="xxgk_title">    <!--友情链接title-->
+        <h3>友情链接</h3>
+    </div>
+    <select name=""  class="select select1">
+        <option value="">省公安厅警种链接频道</option>
+        <option value="">省公安厅警种链接频道</option>
+        <option value="">省公安厅警种链接频道</option>
+        <option value="">省公安厅警种链接频道</option>
+    </select>
+    <select name=""  class="select select2">
+        <option value="">广东省公安政务网站子站链接</option>
+        <option value="">广东省公安政务网站子站链接</option>
+        <option value="">广东省公安政务网站子站链接</option>
+        <option value="">广东省公安政务网站子站链接</option>
+    </select>
+    <select name=""  class="select select3">
+        <option value="">茂名市公安局分县局门户网站链接</option>
+        <option value="">茂名市公安局分县局门户网站链接</option>
+        <option value="">茂名市公安局分县局门户网站链接</option>
+        <option value="">茂名市公安局分县局门户网站链接</option>
+    </select>
+    <select name=""  class="select select4">
+        <option value="">全国公安网站链接</option>
+        <option value="">全国公安网站链接</option>
+        <option value="">全国公安网站链接</option>
+        <option value="">全国公安网站链接</option>
+    </select>
+</div>
+<!--友情链接 end---->
+
+<!--页脚-->
+<footer id="footer" class="mainContainer vertical_center">
+    <nav>
+        <ul>
+            <li><a href="">网站地图</a></li>
+            <li><a href="">隐私安全</a></li>
+            <li><a href="">版权声明</a></li>
+            <li><a href="">联系方式</a></li>
+            <li><a href="">法律责任</a></li>
+        </ul>
+    </nav>
+    <article>
+        <section>
+            <p>网站维护：茂名市公安局宣传科</p>
+            <p>不得转载及建立镜像，否则追究法律责任 地址：茂名市油城九路</p>
+            <p>版权所有：茂名市公安局© 2015-2017 粤ICP备08021365号（最佳分辨率：1920*1080）</p>
+            <div id="footer_logo">
+                <img src="images/footer-logo.png" alt="党政机关">
+            </div>
+        </section>
+    </article>
+</footer>
+<!--页脚-->
+
+
+</body>
+</html>
